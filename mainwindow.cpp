@@ -36,7 +36,7 @@ void MainWindow::onOpenButton()
         QSqlTableModel *pModel = new QSqlTableModel(tabWidget, db);
         pModel->setTable(it);
         pModel->select();
-        QTableView *tableView = new QTableView();
+        QTableView *tableView = new QTableView(this);
         tableView->setModel(pModel);
         tabWidget->addTab(tableView,it);
     }
